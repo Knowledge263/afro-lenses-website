@@ -1,0 +1,233 @@
+/* ===== PRICING SECTION ===== */
+/* ===== BODY ===== */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-image: url(../images/background.jpg); /* correct path if css is in /css/ */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #f1f5f9;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: rgba(15, 23, 42, 0.95);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar .logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #f1f5f9;
+}
+
+.navbar nav a {
+    color: #f1f5f9;
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar nav a:hover {
+    color: #3b82f6; /* accent hover */
+}
+
+/* ===== SECTION HEADINGS ===== */
+.section {
+    padding: 80px 20px 60px 20px;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 2.4rem;
+    margin-bottom: 15px;
+    color: #f1f5f9;
+}
+
+.section-intro {
+    font-size: 1.1rem;
+    margin-bottom: 50px;
+    color: #cbd5e1;
+}
+
+/* ===== PRICING GRID ===== */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+    padding: 0 20px;
+}
+
+/* ===== PRICING CARD ===== */
+.pricing-card {
+    background: #0f172a; /* dark blue */
+    color: #f1f5f9;
+    padding: 40px 30px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(37, 99, 235, 0.3); /* glow effect */
+}
+
+/* ===== FEATURED CARD ===== */
+.pricing-card.featured {
+    background: #2563eb; /* accent blue */
+    color: #fff;
+    transform: scale(1.05);
+}
+
+.pricing-card h3 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+}
+
+.pricing-price {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 20px 0;
+}
+
+/* ===== LIST STYLING ===== */
+.pricing-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 25px 0;
+}
+
+.pricing-card ul li {
+    margin-bottom: 12px;
+    font-size: 1rem;
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary {
+    background-color: #3b82f6;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #2563eb;
+    transform: translateY(-2px);
+}
+
+.btn-accent {
+    background-color: #f59e0b;
+    color: #0f172a;
+}
+
+.btn-accent:hover {
+    background-color: #d97706;
+    transform: translateY(-2px);
+}
+
+/* ===== COMPARE TOGGLE ===== */
+.compare-toggle {
+    text-align: center;
+    margin: 30px 0 10px 0;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #f1f5f9;
+}
+
+.compare-toggle input {
+    margin-right: 10px;
+}
+
+/* ===== COMPARE TABLE ===== */
+.compare-table {
+    display: none;
+    margin: 30px auto;
+    overflow-x: auto;
+    padding: 10px;
+}
+
+.compare-table table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(15,23,42,0.9);
+    color: #f1f5f9;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.compare-table th, 
+.compare-table td {
+    padding: 15px 10px;
+    text-align: center;
+    border-bottom: 1px solid #334155;
+}
+
+.compare-table th {
+    background-color: #2563eb; /* accent */
+}
+
+.compare-table tbody tr:hover {
+    background-color: rgba(37, 99, 235, 0.2);
+}
+
+/* ===== REVEAL ANIMATION ===== */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.7s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    text-align: center;
+    padding: 25px 20px;
+    background-color: rgba(15,23,42,0.95);
+    color: #f1f5f9;
+    font-size: 0.95rem;
+    margin-top: 50px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .pricing-card.featured {
+        transform: scale(1);
+    }
+
+    .pricing-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar nav a {
+        margin: 10px 0;
+    }
+}

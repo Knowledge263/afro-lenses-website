@@ -2,27 +2,77 @@
 <html>
 <head>
 <title>Contact — Afro Lenses</title>
+<link rel="shortcut icon" href="/images/line1.png" type="image/x-icon">
 <meta name="description" content="Afro Lenses is a digital agency offering web design, branding, and digital marketing for businesses in South Africa.">
 <meta name="keywords" content="web design south africa, website developer, afro lenses, business websites">
 <meta name="author" content="Afro Lenses">
+
+<link rel="stylesheet" href="contact.css">
+
 </head>
 <body>
 <header><h2>Afro Lenses</h2>
-<nav>
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="services.html">Services</a>
-<a href="portfolio.html">Portfolio</a>
-<a href="contact.html">Contact</a>
+<nav class="navbar">
+<ul class="nav-links">  
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="portfolio.html">Portfolio</a></li>
+<li><a href="contact.html">Contact</a></li>
+<li><a href="pricing.html">Pricing</a></li>
+<li><a href="Digital Marketing.html">Digital Marketing</a></li>
+</ul>
+ <div class="menu-toggle" id="mobile-menu">☰</div>
 </nav></header>
 
 
-<section class="section">
-<h1>Contact Us</h1>
-<p>Email: admin@afrolenses.com</p>
-<p>WhatsApp: +27 60 484 4908</p>
-<a class="btn" href="https://wa.me/27604844908">Chat on WhatsApp</a>
+<section id="contact" class="contact-section fade-in">
+  <h1>Get in Touch</h1>
+  <p class="subtitle">Let’s build something powerful for your brand</p>
+
+  <div class="contact-container">
+    
+    <!-- Contact Info -->
+    <div class="contact-info">
+      <h2>Contact Afro Lenses</h2>
+      <p><strong>Email:</strong> admin@afrolenses.com</p>
+      <p><strong>WhatsApp:</strong> +27 60 484 4908</p>
+
+      <a class="btn" href="https://wa.me/27604844908" target="_blank">
+        Chat on WhatsApp
+      </a>
+    </div>
+
+    <!-- Contact Form -->
+    <form
+      action="https://formspree.io/f/xreenaev"
+      method="POST"
+      class="contact-form"
+    >
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <input type="text" name="subject" placeholder="Subject" />
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+      <p id="successMessage">Message sent successfully ✔</p>
+    </form>
+
+  </div>
 </section>
+
+
+
 <footer>© 2025 Afro Lenses</footer>
+<script src="contact.js"></script>
+
+<script>
+  const menu = document.getElementById("mobile-menu");
+  const navLinks = document.querySelector(".nav-links");
+
+  menu.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+</script>
+
 </body>
 </html>

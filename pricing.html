@@ -3,10 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <title>Pricing | Afro Lenses</title>
-  <link rel="stylesheet" href="css/style.css">
+  
   <meta name="description" content="Afro Lenses is a digital agency offering web design, branding, and digital marketing for businesses in South Africa.">
 <meta name="keywords" content="web design south africa, website developer, afro lenses, business websites">
 <meta name="author" content="Afro Lenses">
+
+<link rel="stylesheet" href="pricing.css">
 
 </head>
 <body>
@@ -15,52 +17,150 @@
   <h1 class="logo">Afro Lenses</h1>
   <nav>
     <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
     <a href="portfolio.html">Portfolio</a>
     <a href="pricing.html">Pricing</a>
     <a href="contact.html">Contact</a>
+    <a href="Digital Marketing.html">Digital Marketing</a>
   </nav>
 </header>
 
-<section class="section">
+<section id="pricing" class="section reveal">
   <h2>Website Packages</h2>
+  <p class="section-intro">
+    Choose the perfect package for your business and grow your online presence.
+  </p>
 
-  <div class="portfolio-grid">
+  <!-- Compare Packages Toggle -->
+  <div class="compare-toggle">
+    <label>
+      <input type="checkbox" id="toggleCompare">
+      Compare Packages
+    </label>
+  </div>
 
-    <div class="portfolio-card">
+  <div class="pricing-grid">
+
+    <div class="pricing-card">
       <h3>Starter Website</h3>
-      <p>R1,500</p>
-      <ul>
+      <p class="pricing-price">R1,500</p>
+      <ul class="features-list">
         <li>1–3 Pages</li>
         <li>Mobile Friendly</li>
-        <li>Contact Button</li>
+        <li>WhatsApp Contact Button</li>
       </ul>
-      <a href="https://wa.me/27604844908" class="btn">Order Now</a>
+      <a href="https://wa.me/27604844908" class="btn btn-primary">Order Now</a>
     </div>
 
-    <div class="portfolio-card">
+    <div class="pricing-card featured">
       <h3>Business Website</h3>
-      <p>R3,000</p>
-      <ul>
+      <p class="pricing-price">R3,000</p>
+      <ul class="features-list">
         <li>Up to 6 Pages</li>
         <li>Portfolio Section</li>
         <li>SEO Ready</li>
+        <li>Contact Form</li>
       </ul>
-      <a href="https://wa.me/27604844908" class="btn">Order Now</a>
+      <a href="https://wa.me/27604844908" class="btn btn-accent">Most Popular</a>
     </div>
 
-    <div class="portfolio-card">
+    <div class="pricing-card">
       <h3>Premium Website</h3>
-      <p>R5,000+</p>
-      <ul>
+      <p class="pricing-price">R5,000+</p>
+      <ul class="features-list">
         <li>Custom Design</li>
         <li>Animations</li>
         <li>Ongoing Support</li>
       </ul>
-      <a href="https://wa.me/27604844908" class="btn">Order Now</a>
+      <a href="https://wa.me/27604844908" class="btn btn-primary">Order Now</a>
     </div>
 
   </div>
+
+  <!-- Compare Table (hidden initially) -->
+  <div class="compare-table" id="compareTable">
+    <table>
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th>Starter</th>
+          <th>Business</th>
+          <th>Premium</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Number of Pages</td>
+          <td>1–3</td>
+          <td>Up to 6</td>
+          <td>Custom</td>
+        </tr>
+        <tr>
+          <td>Mobile Friendly</td>
+          <td>✅</td>
+          <td>✅</td>
+          <td>✅</td>
+        </tr>
+        <tr>
+          <td>Portfolio Section</td>
+          <td>❌</td>
+          <td>✅</td>
+          <td>✅</td>
+        </tr>
+        <tr>
+          <td>SEO Ready</td>
+          <td>❌</td>
+          <td>✅</td>
+          <td>✅</td>
+        </tr>
+        <tr>
+          <td>Animations</td>
+          <td>❌</td>
+          <td>❌</td>
+          <td>✅</td>
+        </tr>
+        <tr>
+          <td>Support</td>
+          <td>Basic</td>
+          <td>Standard</td>
+          <td>Ongoing</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </section>
+
+
+<footer class="footer">
+  <p>© 2026 Afro Lenses. All rights reserved.</p>
+</footer>
+
+<script>
+  // Scroll reveal for section elements
+  const reveals = document.querySelectorAll(".reveal");
+  window.addEventListener("scroll", () => {
+    reveals.forEach(el => {
+      const top = el.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+      if(top < windowHeight - 100) {
+        el.classList.add("active");
+      }
+    });
+  });
+
+  // Toggle compare table
+  const toggleCompare = document.getElementById("toggleCompare");
+  const compareTable = document.getElementById("compareTable");
+
+  toggleCompare.addEventListener("change", () => {
+    if(toggleCompare.checked) {
+      compareTable.style.display = "block";
+    } else {
+      compareTable.style.display = "none";
+    }
+  });
+</script>
 
 </body>
 </html>
