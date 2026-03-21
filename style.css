@@ -409,11 +409,11 @@ margin: var(--text-light);
   align-items: center;
   justify-content: space-between;
   padding: 15px 40px;
-  background-color: #dad1d1;
+  background-color: #6c7785;
 }
 
 .logo img {
-  height: 45px;
+  height: 75px;
   width:auto;
 }
 
@@ -431,3 +431,11 @@ margin: var(--text-light);
   transform: scale(1.05);
 }
 
+.services-bg {
+  background-image: url("images/AD\ SPEND.jpg"); /* change to your image path */
+  background-size: cover;       /* makes the image fill the section */
+  background-position: center;  /* keeps it centered */
+  background-repeat: no-repeat;
+  padding: 60px 20px;
+  color: white; /* optional if the image is dark */
+}
