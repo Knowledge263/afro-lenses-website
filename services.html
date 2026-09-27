@@ -1,6 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- Header Navigation -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Services | Afro Lenses</title>
+    <link rel="shortcut icon" href="/images/line1.png" type="image/x-icon">
+    <meta name="description" content="Afro Lenses is a digital agency offering cross-platform mobile apps, web design, branding, and digital marketing in South Africa.">
+    
+    <!-- Modern Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Theme Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        dark: '#0f172a',
+                        card: '#1e293b',
+                        accent1: '#06b6d4',
+                        accent2: '#d946ef',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom Utilities -->
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-gradient {
+                @apply bg-clip-text text-transparent bg-gradient-to-r from-accent1 to-accent2;
+            }
+        }
+    </style>
+</head>
+<body class="bg-dark text-slate-300 font-sans antialiased min-h-screen flex flex-col selection:bg-accent1 selection:text-dark">
+
+    <!-- Header Navigation -->
     <header class="border-b border-slate-800 bg-dark/80 backdrop-blur-md sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <a href="index.html" class="flex items-center gap-3 group">
@@ -38,30 +81,6 @@
             <a href="contact.html" class="hover:text-accent1 transition-colors">Contact</a>
         </nav>
     </header>
-<body class="bg-dark text-slate-300 font-sans antialiased min-h-screen flex flex-col selection:bg-accent1 selection:text-dark">
-
-    <!-- Header Navigation -->
-    <header class="border-b border-slate-800 bg-dark/80 backdrop-blur-md sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="flex items-center gap-3 group">
-                <!-- Replace with your actual SVG path -->
-                <div class="w-10 h-10 bg-gradient-to-br from-accent1 to-accent2 rounded-xl flex items-center justify-center text-white font-bold text-xl group-hover:scale-105 transition-transform">
-                    AL
-                </div>
-                <h2 class="text-xl font-bold text-white tracking-wide">Afro Lenses</h2>
-            </a>
-            
-            <nav class="hidden md:flex gap-8 font-medium text-sm">
-                <a href="index.html" class="hover:text-accent1 transition-colors">Home</a>
-                <a href="about.html" class="hover:text-accent1 transition-colors">About</a>
-                <a href="services.html" class="text-accent1 font-semibold">Services</a>
-                <a href="portfolio.html" class="hover:text-accent1 transition-colors">Portfolio</a>
-                <a href="pricing.html" class="hover:text-accent1 transition-colors">Pricing</a>
-                <a href="digital-marketing.html" class="hover:text-accent1 transition-colors">Digital Marketing</a>
-                <a href="contact.html" class="hover:text-accent1 transition-colors">Contact</a>
-            </nav>
-        </div>
-    </header>
 
     <!-- Main Content -->
     <main class="flex-grow max-w-7xl mx-auto px-6 py-20 w-full">
@@ -77,7 +96,7 @@
         <!-- Services Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             
-            <!-- Mobile App Dev (NEW) -->
+            <!-- Mobile App Dev -->
             <div class="bg-card rounded-2xl p-8 border border-slate-700 hover:border-accent1 hover:-translate-y-1 transition-all duration-300 group">
                 <div class="w-14 h-14 bg-slate-800 rounded-xl flex items-center justify-center mb-6 text-3xl group-hover:text-accent1 transition-colors">
                     📱
@@ -140,8 +159,22 @@
         <p>&copy; <span id="year"></span> Afro Lenses. All rights reserved.</p>
     </footer>
 
+    <!-- Scripts -->
     <script>
-        document.getElementById("year").textContent = new Date().getFullYear();
+        document.addEventListener("DOMContentLoaded", () => {
+            // Set dynamic year
+            document.getElementById("year").textContent = new Date().getFullYear();
+
+            // Mobile Menu Toggle Logic
+            const menuBtn = document.getElementById("mobile-menu-btn");
+            const mobileMenu = document.getElementById("mobile-menu");
+
+            if (menuBtn && mobileMenu) {
+                menuBtn.addEventListener("click", () => {
+                    mobileMenu.classList.toggle("hidden");
+                });
+            }
+        });
     </script>
 </body>
 </html>
