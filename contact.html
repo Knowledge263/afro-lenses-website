@@ -1,78 +1,143 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Contact — Afro Lenses</title>
-<link rel="shortcut icon" href="/images/line1.png" type="image/x-icon">
-<meta name="description" content="Afro Lenses is a digital agency offering web design, branding, and digital marketing for businesses in South Africa.">
-<meta name="keywords" content="web design south africa, website developer, afro lenses, business websites">
-<meta name="author" content="Afro Lenses">
-
-<link rel="stylesheet" href="contact.css">
-
-</head>
-<body>
-<header><h2>Afro Lenses</h2>
-<nav class="navbar">
-<ul class="nav-links">  
-<li><a href="index.html">Home</a></li>
-<li><a href="about.html">About</a></li>
-<li><a href="services.html">Services</a></li>
-<li><a href="portfolio.html">Portfolio</a></li>
-<li><a href="contact.html">Contact</a></li>
-<li><a href="pricing.html">Pricing</a></li>
-<li><a href="Digital Marketing.html">Digital Marketing</a></li>
-</ul>
- <div class="menu-toggle" id="mobile-menu">☰</div>
-</nav></header>
-
-
-<section id="contact" class="contact-section fade-in">
-  <h1>Get in Touch</h1>
-  <p class="subtitle">Let’s build something powerful for your brand</p>
-
-  <div class="contact-container">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Afro Lenses</title>
+    <link rel="canonical" href="https://afrolenses.co.za/contact.html">
+    <meta name="description" content="Get in touch with Afro Lenses for expert web design, mobile app development, branding, and digital marketing services in South Africa.">
     
-    <!-- Contact Info -->
-    <div class="contact-info">
-      <h2>Contact Afro Lenses</h2>
-      <p><strong>Email:</strong> admin@afrolenses.com</p>
-      <p><strong>WhatsApp:</strong> +27 60 484 4908</p>
+    <link rel="shortcut icon" href="/images/line1.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        dark: '#0f172a',
+                        card: '#1e293b',
+                        accent1: '#06b6d4',
+                        accent2: '#d946ef',
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-gradient { @apply bg-clip-text text-transparent bg-gradient-to-r from-accent1 to-accent2; }
+            .btn-primary { @apply inline-block px-8 py-4 rounded-full font-bold text-white bg-gradient-to-r from-accent1 to-accent2 hover:scale-105 transition-transform shadow-lg shadow-accent1/20 cursor-pointer text-center; }
+            .btn-accent { @apply inline-block px-8 py-4 rounded-full font-bold text-dark bg-accent1 hover:bg-white hover:scale-105 transition-all shadow-lg shadow-accent1/20 text-center; }
+            .input-field { @apply w-full bg-slate-900 border border-slate-700 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-accent1 focus:ring-1 focus:ring-accent1 transition-colors; }
+        }
+    </style>
+</head>
+<body class="bg-dark text-slate-300 font-sans antialiased min-h-screen flex flex-col selection:bg-accent1 selection:text-dark">
 
-      <a class="btn" href="https://wa.me/27604844908" target="_blank">
-        Chat on WhatsApp
-      </a>
-    </div>
+    <header class="border-b border-slate-800 bg-dark/80 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 bg-gradient-to-br from-accent1 to-accent2 rounded-xl flex items-center justify-center text-white font-bold text-xl group-hover:scale-105 transition-transform">AL</div>
+                <h2 class="text-xl font-bold text-white tracking-wide">Afro Lenses</h2>
+            </a>
+            
+            <button id="mobile-menu-btn" class="md:hidden text-slate-300 hover:text-white focus:outline-none text-2xl">☰</button>
 
-    <!-- Contact Form -->
-    <form
-      action="https://formspree.io/f/xreenaev"
-      method="POST"
-      class="contact-form"
-    >
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Your Email" required />
-      <input type="text" name="subject" placeholder="Subject" />
-      <textarea name="message" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-      <p id="successMessage">Message sent successfully ✔</p>
-    </form>
+            <nav class="hidden md:flex gap-8 font-medium text-sm">
+                <a href="index.html" class="hover:text-accent1 transition-colors">Home</a>
+                <a href="about.html" class="hover:text-accent1 transition-colors">About</a>
+                <a href="services.html" class="hover:text-accent1 transition-colors">Services</a>
+                <a href="portfolio.html" class="hover:text-accent1 transition-colors">Portfolio</a>
+                <a href="pricing.html" class="hover:text-accent1 transition-colors">Pricing</a>
+                <a href="digital-marketing.html" class="hover:text-accent1 transition-colors">Digital Marketing</a>
+                <a href="contact.html" class="text-accent1 font-semibold">Contact</a>
+            </nav>
+        </div>
 
-  </div>
-</section>
+        <nav id="mobile-menu" class="hidden md:hidden bg-card border-b border-slate-800 px-6 py-4 flex flex-col gap-4 font-medium text-sm">
+            <a href="index.html" class="hover:text-accent1 transition-colors">Home</a>
+            <a href="about.html" class="hover:text-accent1 transition-colors">About</a>
+            <a href="services.html" class="hover:text-accent1 transition-colors">Services</a>
+            <a href="portfolio.html" class="hover:text-accent1 transition-colors">Portfolio</a>
+            <a href="pricing.html" class="hover:text-accent1 transition-colors">Pricing</a>
+            <a href="digital-marketing.html" class="hover:text-accent1 transition-colors">Digital Marketing</a>
+            <a href="contact.html" class="text-accent1 font-semibold">Contact</a>
+        </nav>
+    </header>
 
+    <main class="flex-grow w-full max-w-7xl mx-auto px-6 py-20">
+        <div class="text-center mb-16">
+            <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6 tracking-tight">Get in <span class="text-gradient">Touch</span></h1>
+            <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto">Let’s build something powerful for your brand.</p>
+        </div>
 
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+            
+            <!-- Contact Info -->
+            <aside class="bg-card rounded-2xl p-8 border border-slate-700 flex flex-col justify-center">
+                <h2 class="text-3xl font-bold text-white mb-4">Contact Afro Lenses</h2>
+                <p class="text-slate-400 mb-8 leading-relaxed">Ready to start your next project? Reach out to us directly or drop a message using the form.</p>
+                
+                <div class="space-y-6 mb-10">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center text-xl">📧</div>
+                        <div>
+                            <p class="text-sm text-slate-500 uppercase tracking-wider font-semibold">Email</p>
+                            <a href="mailto:admin@afrolenses.co.za" class="text-white font-medium hover:text-accent1 transition-colors">admin@afrolenses.co.za</a>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center text-xl">💬</div>
+                        <div>
+                            <p class="text-sm text-slate-500 uppercase tracking-wider font-semibold">WhatsApp</p>
+                            <a href="https://wa.me/27604844908" target="_blank" class="text-white font-medium hover:text-accent1 transition-colors">+27 60 484 4908</a>
+                        </div>
+                    </div>
+                </div>
 
-<footer>© 2025 Afro Lenses</footer>
-<script src="contact.js"></script>
+                <a href="https://wa.me/27604844908" target="_blank" class="btn-accent w-full md:w-max">Chat on WhatsApp</a>
+            </aside>
 
-<script>
-  const menu = document.getElementById("mobile-menu");
-  const navLinks = document.querySelector(".nav-links");
+            <!-- Contact Form -->
+            <div class="bg-card rounded-2xl p-8 border border-slate-700 shadow-2xl">
+                <form action="https://formspree.io/f/xreenaev" method="POST" class="space-y-6">
+                    <div>
+                        <label for="name" class="sr-only">Your Name</label>
+                        <input type="text" id="name" name="name" class="input-field" placeholder="Your Name" required />
+                    </div>
+                    <div>
+                        <label for="email" class="sr-only">Your Email</label>
+                        <input type="email" id="email" name="email" class="input-field" placeholder="Your Email" required />
+                    </div>
+                    <div>
+                        <label for="subject" class="sr-only">Subject</label>
+                        <input type="text" id="subject" name="subject" class="input-field" placeholder="Subject" />
+                    </div>
+                    <div>
+                        <label for="message" class="sr-only">Your Message</label>
+                        <textarea id="message" name="message" class="input-field" rows="5" placeholder="How can we help you?" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary w-full">Send Message</button>
+                </form>
+            </div>
 
-  menu.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
-  });
-</script>
+        </div>
+    </main>
 
+    <footer class="border-t border-slate-800 py-8 text-center text-slate-500 mt-auto">
+        <p>&copy; <span id="year"></span> Afro Lenses. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            document.getElementById("year").textContent = new Date().getFullYear();
+            const menuBtn = document.getElementById("mobile-menu-btn");
+            const mobileMenu = document.getElementById("mobile-menu");
+            if (menuBtn && mobileMenu) menuBtn.addEventListener("click", () => mobileMenu.classList.toggle("hidden"));
+        });
+    </script>
 </body>
 </html>

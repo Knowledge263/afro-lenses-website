@@ -1,36 +1,150 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Services — Afro Lenses</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Services | Afro Lenses</title>
     <link rel="shortcut icon" href="/images/line1.png" type="image/x-icon">
-    <meta name="description" content="Afro Lenses is a digital agency offering web design, branding, and digital marketing for businesses in South Africa.">
-<meta name="keywords" content="web design south africa, website developer, afro lenses, business websites">
-<meta name="author" content="Afro Lenses">
+    <meta name="description" content="Afro Lenses is a digital agency offering cross-platform mobile apps, web design, branding, and digital marketing in South Africa.">
+    
+    <!-- Modern Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN for instant styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Theme Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        dark: '#0f172a',    /* Deep Slate */
+                        card: '#1e293b',    /* Lighter Slate for cards */
+                        accent1: '#06b6d4', /* Neon Cyan */
+                        accent2: '#d946ef', /* Neon Fuchsia */
+                    }
+                }
+            }
+        }
+    </script>
 
-<link rel="stylesheet" href="style.css">
+    <!-- Custom Utilities -->
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-gradient {
+                @apply bg-clip-text text-transparent bg-gradient-to-r from-accent1 to-accent2;
+            }
+        }
+    </style>
 </head>
-<body>
-<header><h2>Afro Lenses</h2>
-<nav>
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="services.html">Services</a>
-<a href="portfolio.html">Portfolio</a>
-<a href="contact.html">Contact</a>
-<a href="pricing.html">Pricing</a>
-<a href="Digital Marketing.html">Digital Marketing</a>
-</nav></header>
+<body class="bg-dark text-slate-300 font-sans antialiased min-h-screen flex flex-col selection:bg-accent1 selection:text-dark">
 
+    <!-- Header Navigation -->
+    <header class="border-b border-slate-800 bg-dark/80 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <!-- Replace with your actual SVG path -->
+                <div class="w-10 h-10 bg-gradient-to-br from-accent1 to-accent2 rounded-xl flex items-center justify-center text-white font-bold text-xl group-hover:scale-105 transition-transform">
+                    AL
+                </div>
+                <h2 class="text-xl font-bold text-white tracking-wide">Afro Lenses</h2>
+            </a>
+            
+            <nav class="hidden md:flex gap-8 font-medium text-sm">
+                <a href="index.html" class="hover:text-accent1 transition-colors">Home</a>
+                <a href="about.html" class="hover:text-accent1 transition-colors">About</a>
+                <a href="services.html" class="text-accent1 font-semibold">Services</a>
+                <a href="portfolio.html" class="hover:text-accent1 transition-colors">Portfolio</a>
+                <a href="pricing.html" class="hover:text-accent1 transition-colors">Pricing</a>
+                <a href="digital-marketing.html" class="hover:text-accent1 transition-colors">Digital Marketing</a>
+                <a href="contact.html" class="hover:text-accent1 transition-colors">Contact</a>
+            </nav>
+        </div>
+    </header>
 
-<section class="section">
-<h1>Our Services</h1>
-<div class="grid">
-<div class="card"><h3>Website Development</h3><p>Business websites, landing pages & portfolios.</p></div>
-<div class="card"><h3>E‑commerce</h3><p>Shopify, WooCommerce & online stores.</p></div>
-<div class="card"><h3>Brand Identity</h3><p>Logos, company profiles and visual kits.</p></div>
-<div class="card"><h3>Marketing</h3><p>Social media management & ads.</p></div>
-</div>
-</section>
-<footer>© 2025 Afro Lenses</footer>
+    <!-- Main Content -->
+    <main class="flex-grow max-w-7xl mx-auto px-6 py-20 w-full">
+        <div class="text-center mb-16">
+            <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6 tracking-tight">
+                Our <span class="text-gradient">Expertise</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto">
+                We engineer high-performance digital solutions to scale your brand, from full-stack mobile applications to targeted marketing campaigns.
+            </p>
+        </div>
+
+        <!-- Services Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- Mobile App Dev (NEW) -->
+            <div class="bg-card rounded-2xl p-8 border border-slate-700 hover:border-accent1 hover:-translate-y-1 transition-all duration-300 group">
+                <div class="w-14 h-14 bg-slate-800 rounded-xl flex items-center justify-center mb-6 text-3xl group-hover:text-accent1 transition-colors">
+                    📱
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-3">Mobile App Development</h3>
+                <p class="text-slate-400 leading-relaxed">
+                    Fast, scalable cross-platform apps for iOS and Android using React Native and robust Firebase backend architectures.
+                </p>
+            </div>
+
+            <!-- Web Dev -->
+            <div class="bg-card rounded-2xl p-8 border border-slate-700 hover:border-accent2 hover:-translate-y-1 transition-all duration-300 group">
+                <div class="w-14 h-14 bg-slate-800 rounded-xl flex items-center justify-center mb-6 text-3xl group-hover:text-accent2 transition-colors">
+                    💻
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-3">Website Development</h3>
+                <p class="text-slate-400 leading-relaxed">
+                    Responsive, high-converting business websites, interactive landing pages, and professional digital portfolios.
+                </p>
+            </div>
+
+            <!-- E-Commerce -->
+            <div class="bg-card rounded-2xl p-8 border border-slate-700 hover:border-accent1 hover:-translate-y-1 transition-all duration-300 group">
+                <div class="w-14 h-14 bg-slate-800 rounded-xl flex items-center justify-center mb-6 text-3xl group-hover:text-accent1 transition-colors">
+                    🛍️
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-3">E‑commerce Solutions</h3>
+                <p class="text-slate-400 leading-relaxed">
+                    Seamless online shopping experiences utilizing Shopify, WooCommerce, and custom cart integrations.
+                </p>
+            </div>
+
+            <!-- Brand Identity -->
+            <div class="bg-card rounded-2xl p-8 border border-slate-700 hover:border-accent2 hover:-translate-y-1 transition-all duration-300 group">
+                <div class="w-14 h-14 bg-slate-800 rounded-xl flex items-center justify-center mb-6 text-3xl group-hover:text-accent2 transition-colors">
+                    🎨
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-3">Brand Identity</h3>
+                <p class="text-slate-400 leading-relaxed">
+                    Distinctive logos, comprehensive company profiles, and cohesive visual kits that make your brand memorable.
+                </p>
+            </div>
+
+            <!-- Marketing -->
+            <div class="bg-card rounded-2xl p-8 border border-slate-700 hover:border-accent1 hover:-translate-y-1 transition-all duration-300 group">
+                <div class="w-14 h-14 bg-slate-800 rounded-xl flex items-center justify-center mb-6 text-3xl group-hover:text-accent1 transition-colors">
+                    🚀
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-3">Digital Marketing</h3>
+                <p class="text-slate-400 leading-relaxed">
+                    Data-driven social media management, targeted ad campaigns, and content strategies to drive measurable growth.
+                </p>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800 py-8 text-center text-slate-500 mt-auto">
+        <p>&copy; <span id="year"></span> Afro Lenses. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>

@@ -1,70 +1,134 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>About — Afro Lenses</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Afro Lenses Digital Agency</title>
+    <link rel="canonical" href="https://afrolenses.co.za/about.html">
+    <meta name="description" content="Afro Lenses is a creative digital agency in South Africa specializing in web design, mobile app development, videography, and brand content creation.">
+    
     <link rel="shortcut icon" href="/images/line1.png" type="image/x-icon">
-    <meta name="description" content="Afro Lenses is a digital agency offering web design, branding, and digital marketing for businesses in South Africa.">
-<meta name="keywords" content="web design south africa, website developer, afro lenses, business websites">
-<meta name="author" content="Afro Lenses"> 
-
-<link rel="stylesheet" href="style.css">
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        dark: '#0f172a',
+                        card: '#1e293b',
+                        accent1: '#06b6d4',
+                        accent2: '#d946ef',
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-gradient { @apply bg-clip-text text-transparent bg-gradient-to-r from-accent1 to-accent2; }
+            .btn-primary { @apply inline-block px-8 py-4 rounded-full font-bold text-white bg-gradient-to-r from-accent1 to-accent2 hover:scale-105 transition-transform shadow-lg shadow-accent1/20; }
+        }
+    </style>
 </head>
-<body>
-<header>
-<h1>Afro Lenses</h1>
-<nav>
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="services.html">Services</a>
-<a href="portfolio.html">Portfolio</a>
-<a href="contact.html">Contact</a>
-<a href="Digital Marketing.html">Digital Marketing</a>
-</nav>
-</header>
+<body class="bg-dark text-slate-300 font-sans antialiased min-h-screen flex flex-col selection:bg-accent1 selection:text-dark">
 
+    <!-- Navigation -->
+    <header class="border-b border-slate-800 bg-dark/80 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 bg-gradient-to-br from-accent1 to-accent2 rounded-xl flex items-center justify-center text-white font-bold text-xl group-hover:scale-105 transition-transform">AL</div>
+                <h2 class="text-xl font-bold text-white tracking-wide">Afro Lenses</h2>
+            </a>
+            
+            <button id="mobile-menu-btn" class="md:hidden text-slate-300 hover:text-white focus:outline-none text-2xl">☰</button>
 
-<section class="section">
-<h1 class="reveal">About Afro Lenses</h1>
-<p class="reveal">Afro Lenses is a creative digital agency specializing in web design, digital marketing, photography, videography, and brand content creation. We help businesses, entrepreneurs, and personal brands build a strong online presence through visually compelling content and high-performing websites.
+            <nav class="hidden md:flex gap-8 font-medium text-sm">
+                <a href="index.html" class="hover:text-accent1 transition-colors">Home</a>
+                <a href="about.html" class="text-accent1 font-semibold">About</a>
+                <a href="services.html" class="hover:text-accent1 transition-colors">Services</a>
+                <a href="portfolio.html" class="hover:text-accent1 transition-colors">Portfolio</a>
+                <a href="pricing.html" class="hover:text-accent1 transition-colors">Pricing</a>
+                <a href="digital-marketing.html" class="hover:text-accent1 transition-colors">Digital Marketing</a>
+                <a href="contact.html" class="hover:text-accent1 transition-colors">Contact</a>
+            </nav>
+        </div>
 
-In today’s digital world, your brand needs more than just visibility—it needs impact. At Afro Lenses, we combine creativity with strategy to design modern, responsive websites, produce engaging visual content, and implement digital marketing solutions that attract, engage, and convert your audience.
+        <nav id="mobile-menu" class="hidden md:hidden bg-card border-b border-slate-800 px-6 py-4 flex flex-col gap-4 font-medium text-sm">
+            <a href="index.html" class="hover:text-accent1 transition-colors">Home</a>
+            <a href="about.html" class="text-accent1 font-semibold">About</a>
+            <a href="services.html" class="hover:text-accent1 transition-colors">Services</a>
+            <a href="portfolio.html" class="hover:text-accent1 transition-colors">Portfolio</a>
+            <a href="pricing.html" class="hover:text-accent1 transition-colors">Pricing</a>
+            <a href="digital-marketing.html" class="hover:text-accent1 transition-colors">Digital Marketing</a>
+            <a href="contact.html" class="hover:text-accent1 transition-colors">Contact</a>
+        </nav>
+    </header>
 
-We work closely with startups, small businesses, and growing brands to understand their goals and deliver tailored digital solutions. From professional web design to social media marketing and visual branding, we ensure every element of your digital identity works together seamlessly.</p>
+    <main class="flex-grow w-full max-w-7xl mx-auto px-6 py-20">
+        <div class="text-center mb-16">
+            <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6 tracking-tight">About <span class="text-gradient">Afro Lenses</span></h1>
+            <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto">Creativity Meets Strategy.</p>
+        </div>
 
-<h3 class="reveal">Our Mission</h3>
-<p class="reveal">
- Our mission is to empower brands through creative digital solutions by delivering high-quality web design, impactful visual content, and effective digital marketing strategies that drive growth, build credibility, and increase online visibility.   
-</p>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <!-- Text Content -->
+            <div class="space-y-8">
+                <div>
+                    <h2 class="text-3xl font-bold text-white mb-4">Who We Are</h2>
+                    <p class="text-slate-400 leading-relaxed mb-4">Afro Lenses is a creative digital agency specializing in web design, digital marketing, photography, videography, and brand content creation. We help businesses, entrepreneurs, and personal brands build a strong online presence through visually compelling content and high-performing websites.</p>
+                    <p class="text-slate-400 leading-relaxed mb-4">In today’s digital world, your brand needs more than just visibility—it needs impact. We combine creativity with strategy to design modern, responsive websites and produce engaging visual content.</p>
+                </div>
 
-<h3>Our Vision</h3>
-<p>
- Our vision is to become a leading creative digital agency, recognized for innovation, authenticity, and results. We aim to help African and global brands tell their stories, scale digitally, and compete confidently in the online space.
-</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div class="bg-card p-6 rounded-2xl border border-slate-700 border-l-4 border-l-accent1">
+                        <h3 class="text-xl font-bold text-white mb-2">Our Mission</h3>
+                        <p class="text-sm text-slate-400">To empower brands through creative digital solutions by delivering high-quality web design, impactful visual content, and effective digital marketing strategies.</p>
+                    </div>
+                    <div class="bg-card p-6 rounded-2xl border border-slate-700 border-l-4 border-l-accent2">
+                        <h3 class="text-xl font-bold text-white mb-2">Our Vision</h3>
+                        <p class="text-sm text-slate-400">To become a leading creative digital agency, recognized for innovation, authenticity, and results. We aim to help brands scale digitally and compete confidently.</p>
+                    </div>
+                </div>
 
-<h3>What We Do</h3>
-<ul class="services-list">
-    <li>Professional Web Design & Website Development</li>
-    <li>Digital Marketing & Online Advertising</li>
-    <li>Photography & Videography</li>
-    <li>Brand Content Creation</li>
-    <li>Social Media Management</li>
-    <li>Creative Direction & Visual Branding</li>
-    </ul>
-<div class="about-grid">
-<div class="about-text">
-</div>
+                <div>
+                    <h3 class="text-2xl font-bold text-white mb-4">What We Do</h3>
+                    <ul class="space-y-3 text-slate-300">
+                        <li class="flex items-center gap-3"><span class="text-accent1">✔</span> Full-Stack Web & Mobile App Development</li>
+                        <li class="flex items-center gap-3"><span class="text-accent1">✔</span> Digital Marketing & Online Advertising</li>
+                        <li class="flex items-center gap-3"><span class="text-accent1">✔</span> Photography & Videography</li>
+                        <li class="flex items-center gap-3"><span class="text-accent1">✔</span> Brand Content Creation</li>
+                        <li class="flex items-center gap-3"><span class="text-accent1">✔</span> Social Media Management</li>
+                        <li class="flex items-center gap-3"><span class="text-accent1">✔</span> Creative Direction & Visual Branding</li>
+                    </ul>
+                </div>
+                
+                <a href="contact.html" class="btn-primary mt-4">Work With Us</a>
+            </div>
 
-<div class="about-image">
-<img src="/images/afro_lenses_logo.svg" alt="About Afro Lenses">
-</div>
-</div>
+            <!-- Image Column -->
+            <div class="relative">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Afro Lenses Creative Team Collaborating" class="rounded-2xl shadow-2xl shadow-accent1/10 border border-slate-700 object-cover w-full h-[600px]">
+                <div class="absolute -bottom-8 -left-8 bg-card p-4 rounded-xl border border-slate-700 shadow-xl hidden md:block">
+                    <img src="/images/afro_lenses_logo.svg" alt="Afro Lenses Accent Logo" class="w-24 h-24">
+                </div>
+            </div>
+        </div>
+    </main>
 
-</section>
+    <footer class="border-t border-slate-800 py-8 text-center text-slate-500 mt-auto">
+        <p>&copy; <span id="year"></span> Afro Lenses. All rights reserved.</p>
+    </footer>
 
-<a href="contact.html" class="cta-btn">Work With Us</a>
-
-<footer>© 2026 Afro Lenses</footer>
-<script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            document.getElementById("year").textContent = new Date().getFullYear();
+            const menuBtn = document.getElementById("mobile-menu-btn");
+            const mobileMenu = document.getElementById("mobile-menu");
+            if (menuBtn && mobileMenu) menuBtn.addEventListener("click", () => mobileMenu.classList.toggle("hidden"));
+        });
+    </script>
 </body>
 </html>
