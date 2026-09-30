@@ -31,6 +31,10 @@
             .text-gradient { @apply bg-clip-text text-transparent bg-gradient-to-r from-accent1 to-accent2; }
             .btn-primary { @apply inline-block px-8 py-3 rounded-full font-bold text-white bg-gradient-to-r from-accent1 to-accent2 hover:scale-105 transition-transform shadow-lg shadow-accent1/20 text-center; }
             .btn-outline { @apply inline-block px-8 py-3 rounded-full font-bold text-white border border-slate-600 hover:border-accent1 hover:text-accent1 transition-colors text-center; }
+            
+            /* Toggle Switch CSS */
+            .toggle-checkbox:checked { right: 0; border-color: #06b6d4; }
+            .toggle-checkbox:checked + .toggle-label { @apply bg-accent1; }
         }
     </style>
 </head>
@@ -104,13 +108,23 @@
 
         <!-- Pricing -->
         <div class="mb-16">
-            <h2 class="text-3xl font-bold text-white text-center mb-12">Our Marketing Packages</h2>
+            <h2 class="text-3xl font-bold text-white text-center mb-8">Our Marketing Packages</h2>
             
+            <!-- Currency Toggle -->
+            <div class="flex justify-center items-center gap-4 mb-12">
+                <span class="text-slate-400 font-bold" id="label-zar">ZAR (R)</span>
+                <div class="relative inline-block w-14 mr-2 align-middle select-none transition duration-200 ease-in">
+                    <input type="checkbox" name="currencyToggle" id="currencyToggle" class="toggle-checkbox absolute block w-7 h-7 rounded-full bg-white border-4 border-slate-700 appearance-none cursor-pointer transition-all duration-300 z-10"/>
+                    <label for="currencyToggle" class="toggle-label block overflow-hidden h-7 rounded-full bg-slate-700 cursor-pointer transition-colors duration-300"></label>
+                </div>
+                <span class="text-slate-600 font-bold" id="label-usd">USD ($)</span>
+            </div>
+
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
                 
                 <article class="bg-card rounded-2xl p-8 border border-slate-700">
                     <h3 class="text-xl font-bold text-white mb-2">Starter</h3>
-                    <p class="text-4xl font-extrabold text-white mb-6">R2,500 <span class="text-lg text-slate-500 font-normal">/mo</span></p>
+                    <p class="text-4xl font-extrabold text-white mb-6"><span class="dynamic-price" data-zar="R2,500" data-usd="$150">R2,500</span> <span class="text-lg text-slate-500 font-normal">/mo</span></p>
                     <ul class="space-y-4 text-slate-400 mb-8">
                         <li class="flex items-center gap-3"><span class="text-accent1">✔</span> 8 Social Media Posts</li>
                         <li class="flex items-center gap-3"><span class="text-accent1">✔</span> Caption Writing</li>
@@ -123,7 +137,7 @@
                 <article class="bg-card rounded-2xl p-8 border-2 border-accent2 transform md:scale-105 shadow-2xl shadow-accent2/10 relative">
                     <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-accent2 text-white font-bold px-4 py-1 rounded-full text-sm">Growth</div>
                     <h3 class="text-xl font-bold text-white mb-2">Growth</h3>
-                    <p class="text-4xl font-extrabold text-white mb-6">R5,000 <span class="text-lg text-slate-300 font-normal">/mo</span></p>
+                    <p class="text-4xl font-extrabold text-white mb-6"><span class="dynamic-price" data-zar="R5,000" data-usd="$300">R5,000</span> <span class="text-lg text-slate-300 font-normal">/mo</span></p>
                     <ul class="space-y-4 text-slate-300 mb-8">
                         <li class="flex items-center gap-3"><span class="text-accent2">✔</span> 16 Social Media Posts</li>
                         <li class="flex items-center gap-3"><span class="text-accent2">✔</span> Page Management</li>
@@ -135,7 +149,7 @@
 
                 <article class="bg-card rounded-2xl p-8 border border-slate-700">
                     <h3 class="text-xl font-bold text-white mb-2">Premium</h3>
-                    <p class="text-4xl font-extrabold text-white mb-6">R8,500<span class="text-2xl">+</span> <span class="text-lg text-slate-500 font-normal">/mo</span></p>
+                    <p class="text-4xl font-extrabold text-white mb-6"><span class="dynamic-price" data-zar="R8,500" data-usd="$500">R8,500</span><span class="text-2xl">+</span> <span class="text-lg text-slate-500 font-normal">/mo</span></p>
                     <ul class="space-y-4 text-slate-400 mb-8">
                         <li class="flex items-center gap-3"><span class="text-accent1">✔</span> Full Content Creation</li>
                         <li class="flex items-center gap-3"><span class="text-accent1">✔</span> Paid Ads Management</li>
@@ -155,10 +169,34 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
+            // Footer year
             document.getElementById("year").textContent = new Date().getFullYear();
+            
+            // Mobile Menu
             const menuBtn = document.getElementById("mobile-menu-btn");
             const mobileMenu = document.getElementById("mobile-menu");
             if (menuBtn && mobileMenu) menuBtn.addEventListener("click", () => mobileMenu.classList.toggle("hidden"));
+
+            // Currency Toggle Logic
+            const currencyToggle = document.getElementById("currencyToggle");
+            const dynamicPrices = document.querySelectorAll(".dynamic-price");
+            const labelZar = document.getElementById("label-zar");
+            const labelUsd = document.getElementById("label-usd");
+
+            if (currencyToggle) {
+                currencyToggle.addEventListener("change", (e) => {
+                    const isUsd = e.target.checked;
+                    
+                    // Highlight the active label
+                    labelZar.className = isUsd ? "text-slate-600 font-bold transition-colors" : "text-slate-400 font-bold transition-colors";
+                    labelUsd.className = isUsd ? "text-slate-400 font-bold transition-colors" : "text-slate-600 font-bold transition-colors";
+
+                    // Swap the text content
+                    dynamicPrices.forEach(priceEl => {
+                        priceEl.textContent = isUsd ? priceEl.getAttribute("data-usd") : priceEl.getAttribute("data-zar");
+                    });
+                });
+            }
         });
     </script>
 </body>
